@@ -57,7 +57,7 @@ int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 	{ fprintf(stderr, "L%d: Unknown instruction %s\n", count, op);
 		fclose(file);
 		free(content);
-		free_stack(*stack);
+		monty_free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
@@ -74,8 +74,8 @@ void monty_pint(stack_t **tete, unsigned int count)
 		fprintf(stderr, "L%u: Can't pint because the stack is empty\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*tete);
+		monty_free_stack(*tete);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*head)->n);
+	printf("%d\n", (*tete)->n);
 }

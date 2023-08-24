@@ -18,20 +18,20 @@ void monty_push(stack_t **head, unsigned int counter)
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
 				flag = 1; }
 		if (flag == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		{ fprintf(stderr, "L%d: usage: push int\n", counter);
 			fclose(bus.file);
 			free(bus.content);
-			free_stack(*head);
+			monty_free_stack(*head);
 			exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode(head, n);
+		monty_add_node(head, n);
 	else
 		addqueue(head, n);
 }
@@ -47,10 +47,10 @@ void monty_pop(stack_t **head, unsigned int counter)
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		fprintf(stderr, "L%d: can't pop stack\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;

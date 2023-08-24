@@ -22,7 +22,7 @@ void monty_add(stack_t **tete, unsigned int count)
 		fprintf(stderr, "L%d: can't add, stack too short\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*tete);
 		exit(EXIT_FAILURE);
 	}
 	h = *tete;
@@ -51,7 +51,7 @@ void monty_sub(stack_t **head, unsigned int count)
 		fprintf(stderr, "L%d: can't sub, stack too short\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	aux = *head;
@@ -83,7 +83,7 @@ void monty_mul(stack_t **head, unsigned int count)
 		fprintf(stderr, "L%d: can't mul, stack too short\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
@@ -114,7 +114,7 @@ void monty_div(stack_t **head, unsigned int count)
 		fprintf(stderr, "L%d: can't div, stack too short\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
@@ -123,7 +123,7 @@ void monty_div(stack_t **head, unsigned int count)
 		fprintf(stderr, "L%d: division by zero\n", count);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	aux = h->next->n / h->n;

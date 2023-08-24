@@ -79,4 +79,4 @@ void monty_add_node(stack_t **head, int n);
 
 
 
-#endif // MONTY_H_INCLUDED
+#endif

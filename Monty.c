@@ -21,7 +21,7 @@ int main(int argcount, char *argvector[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[1], "r");
+	file = fopen(argvector[1], "r");
 	bus.file = file;
 	if (!file)
 	{
@@ -36,7 +36,7 @@ int main(int argcount, char *argvector[])
 		counter++;
 		if (read_line > 0)
 		{
-			monty_execute(content, &stack, counter, file);
+			monty_execute(*content, &stack, counter, *file);
 		}
 		free(content);
 	}

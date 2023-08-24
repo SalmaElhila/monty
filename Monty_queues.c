@@ -37,7 +37,7 @@ void addqueue(stack_t **tete, int n)
 	}
 	if (!aux)
 	{
-		*head = new_node;
+		*tete = new_node;
 		new_node->prev = NULL;
 	}
 	else
