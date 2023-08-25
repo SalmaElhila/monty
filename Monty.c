@@ -1,6 +1,8 @@
 #include "monty.h"
+#include <string.h>
 
 bus_t bus = {NULL, NULL, NULL, 0};
+
 /**
 * main - monty code interpreter
 * @argcount: number of arguments
@@ -36,7 +38,7 @@ int main(int argcount, char *argvector[])
 		counter++;
 		if (read_line > 0)
 		{
-			monty_execute(*content, &stack, counter, *file);
+			execute(content, &stack, counter, file);
 		}
 		free(content);
 	}

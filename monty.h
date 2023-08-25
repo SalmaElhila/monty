@@ -76,6 +76,7 @@ void monty_div(stack_t **head, unsigned int count);
 void monty_push(stack_t **head, unsigned int counter);
 void monty_pop(stack_t **head, unsigned int counter);
 void monty_add_node(stack_t **head, int n);
+int execute(char *content, stack_t **stack, unsigned int count, FILE *file);
 
 
 
